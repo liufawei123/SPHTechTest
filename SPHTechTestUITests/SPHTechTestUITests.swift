@@ -26,8 +26,13 @@ class SPHTechTestUITests: XCTestCase {
     }
 
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        app.otherElements[" 2005-Q4: 0"].tap()
+        
+        let lineChart1DatasetMobileDataUsageElement = app.otherElements["Line Chart. 1 dataset. Mobile Data Usage"]
+        lineChart1DatasetMobileDataUsageElement.tap()
+        lineChart1DatasetMobileDataUsageElement.tap()
+        app.otherElements[" 2009-Q1: 107"].tap()
     }
-
 }

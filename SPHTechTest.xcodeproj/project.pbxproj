@@ -18,6 +18,9 @@
 		7B9C99E22308F31F00AAFB41 /* SPHTechTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C99E12308F31F00AAFB41 /* SPHTechTestUITests.swift */; };
 		7B9C99F32308F78600AAFB41 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C99F22308F78600AAFB41 /* APIManager.swift */; };
 		7B9C99F62308FA3C00AAFB41 /* DatastoreSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C99F52308FA3C00AAFB41 /* DatastoreSearchModel.swift */; };
+		7BDDBB9223093D9700443C2D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDDBB9123093D9700443C2D /* DataManager.swift */; };
+		7BDDBB9D2309440600443C2D /* APIManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDDBB9C2309440600443C2D /* APIManagerTest.swift */; };
+		7BDDBB9F2309441E00443C2D /* DataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDDBB9E2309441E00443C2D /* DataManagerTest.swift */; };
 		7C05C822DC01710D3A61E080 /* Pods_SPHTechTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 529268B8CFF22B09035FB8A7 /* Pods_SPHTechTestTests.framework */; };
 		BC7332554B7B2B3D163D2784 /* Pods_SPHTechTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 351B986CE19FE64C80CFE74D /* Pods_SPHTechTest.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +66,9 @@
 		7B9C99E32308F31F00AAFB41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B9C99F22308F78600AAFB41 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7B9C99F52308FA3C00AAFB41 /* DatastoreSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatastoreSearchModel.swift; sourceTree = "<group>"; };
+		7BDDBB9123093D9700443C2D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		7BDDBB9C2309440600443C2D /* APIManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManagerTest.swift; sourceTree = "<group>"; };
+		7BDDBB9E2309441E00443C2D /* DataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTest.swift; sourceTree = "<group>"; };
 		C1681FEF0EC5DDC0A78B60F9 /* Pods-SPHTechTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechTest.debug.xcconfig"; path = "Target Support Files/Pods-SPHTechTest/Pods-SPHTechTest.debug.xcconfig"; sourceTree = "<group>"; };
 		D3188086C7E43EE406962FCE /* Pods-SPHTechTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SPHTechTestTests.release.xcconfig"; path = "Target Support Files/Pods-SPHTechTestTests/Pods-SPHTechTestTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9C99F42308F83900AAFB41 /* Models */,
-				7B9C99F12308F59D00AAFB41 /* APIManager */,
+				7B9C99F12308F59D00AAFB41 /* Managers */,
 				7B9C99F02308F56500AAFB41 /* ViewControllers */,
 				7B9C99BE2308F31E00AAFB41 /* AppDelegate.swift */,
 				7B9C99C22308F31E00AAFB41 /* Main.storyboard */,
@@ -159,6 +165,8 @@
 		7B9C99D52308F31F00AAFB41 /* SPHTechTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				7BDDBB9E2309441E00443C2D /* DataManagerTest.swift */,
+				7BDDBB9C2309440600443C2D /* APIManagerTest.swift */,
 				7B9C99D62308F31F00AAFB41 /* SPHTechTestTests.swift */,
 				7B9C99D82308F31F00AAFB41 /* Info.plist */,
 			);
@@ -182,12 +190,13 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		7B9C99F12308F59D00AAFB41 /* APIManager */ = {
+		7B9C99F12308F59D00AAFB41 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				7B9C99F22308F78600AAFB41 /* APIManager.swift */,
+				7BDDBB9123093D9700443C2D /* DataManager.swift */,
 			);
-			path = APIManager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		7B9C99F42308F83900AAFB41 /* Models */ = {
@@ -403,15 +412,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SPHTechTest/Pods-SPHTechTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -426,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B9C99F32308F78600AAFB41 /* APIManager.swift in Sources */,
+				7BDDBB9223093D9700443C2D /* DataManager.swift in Sources */,
 				7B9C99C12308F31E00AAFB41 /* ViewController.swift in Sources */,
 				7B9C99C72308F31E00AAFB41 /* SPHTechTest.xcdatamodeld in Sources */,
 				7B9C99F62308FA3C00AAFB41 /* DatastoreSearchModel.swift in Sources */,
@@ -437,6 +447,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDDBB9D2309440600443C2D /* APIManagerTest.swift in Sources */,
+				7BDDBB9F2309441E00443C2D /* DataManagerTest.swift in Sources */,
 				7B9C99D72308F31F00AAFB41 /* SPHTechTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,7 +626,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SPHTechTest.SPHTechTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -632,7 +644,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.SPHTechTest.SPHTechTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

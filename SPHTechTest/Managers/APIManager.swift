@@ -11,6 +11,7 @@ let HOST = "https://data.gov.sg/api/"
 
 enum ErrorsToThrow: Error {
     case urlNotValid
+    case getDataFail
 }
 
 enum API: String {
@@ -38,17 +39,23 @@ class APIManager {
         }
         let dataTask = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else{
-                completionHandler(nil, error)
+                DispatchQueue.main.async {
+                    completionHandler(nil, error)
+                }
                 return
             }
             print(url)
             let str = String(data: data, encoding: .utf8)
             print(str ?? "")
             guard let file = try? JSONDecoder().decode(modelType, from: data) else {
-                completionHandler(nil, error)
+                DispatchQueue.main.async {
+                    completionHandler(nil, error)
+                }
                 return
             }
-            completionHandler(file, nil)
+            DispatchQueue.main.async {
+                completionHandler(file, nil)
+            }
         }
         dataTask.resume()
     }
