@@ -11,9 +11,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        apiManagerInstance.datastoreSearch("a807b7ab-6cad-4aa6-87d0-e283a7353a0f", 10) { (data, error) in
+            
+        }
     }
-
-
 }
 
